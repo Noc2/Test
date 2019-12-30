@@ -11,10 +11,9 @@ jobs:
     steps:
     - name: "CLA Assistant"
       if: (github.event.comment.body == 'recheckcla' || github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA') || github.event_name == 'pull_request'
-      uses: Noc2/github-action-1@master
+      uses: Noc2/github-action@master
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        pat: ${{ secrets.pat }}
       with: 
         path-to-signatures: 'signatures/cla.json'
         path-To-cladocument: 'https://github.com/Noc2/Test/blob/master/README.md'
